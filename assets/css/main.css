@@ -1074,6 +1074,9 @@ table.alt tbody tr td {
 }
 
 .items .item {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	margin: 2em 0 0 2em;
 	width: calc(50% - 2em);
 }
