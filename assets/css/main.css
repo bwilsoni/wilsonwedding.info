@@ -1583,6 +1583,7 @@ body.is-loading #header.alt .inner {
 	padding: 4em 4em 2em 4em;
 	background-color: #ffffff;
 	border-radius: 4px;
+	text-align: center;
 }
 
 @media screen and (max-width: 736px) {
