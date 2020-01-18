@@ -273,7 +273,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-weight: 400;
+	font-weight: 100;
 	line-height: 1.5;
 	margin: 0 0 1em 0;
 	text-transform: uppercase;
@@ -935,7 +935,7 @@ ol li {
 }
 
 ul {
-	list-style: disc;
+	list-style: none;
 	margin: 0 0 2em 0;
 	padding-left: 1em;
 }
