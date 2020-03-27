@@ -1,5 +1,5 @@
 // Set the date we're counting down to
-var countDownDate = new Date("April 4, 2020 17:30").getTime();
+var countDownDate = new Date("September 26, 2020 17:30").getTime();
 
 let id = "countdownClock";
 
