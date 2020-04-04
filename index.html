@@ -104,10 +104,10 @@
 										// a successful payment.
 										// Instead use one of the strategies described in
 										// https://stripe.com/docs/payments/checkout/fulfillment
-										successUrl: `${url}/success.html`,
-										cancelUrl: `${url}/canceled.html`,
-										// successUrl: 'https://wilsonwedding.info/success',
-										// cancelUrl: 'https://wilsonwedding.info/canceled',
+										successUrl: `${url}/success`,
+										cancelUrl: `${url}/canceled`,
+										// successUrl: `${url}/success.html`,
+										// cancelUrl: `${url}/canceled.html`,
 									})
 										.then(function (result) {
 											if (result.error) {
