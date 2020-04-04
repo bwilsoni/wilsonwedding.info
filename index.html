@@ -71,9 +71,6 @@
 						<!-- a tag with site styling and id for stripe functionality -->
 						<a class="button" id="checkout-button-sku_GWGHwy2We7R4IX">Stripe Donation</a>
 
-						<!-- <p id="error-message"></p> -->
-						<!-- <div id="error-message"></div> -->
-
 						<script>
 							(function () {
 								var stripe = Stripe('pk_test_t7MXwhZIsRricBqhGizJCXdU00chu7WdQE');
@@ -103,8 +100,6 @@
 											if (result.error) {
 												// If `redirectToCheckout` fails due to a browser or network
 												// error, display the localized error message to your customer.
-												// var displayError = document.getElementById('error-message');
-												// displayError.textContent = result.error.message;
 												alert(result.error.message)
 											}
 										});
