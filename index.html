@@ -95,6 +95,7 @@
 										// https://stripe.com/docs/payments/checkout/fulfillment
 										successUrl: `${url}/success`,
 										cancelUrl: `${url}/canceled`,
+										submitType: 'donate',
 									})
 										.then(function (result) {
 											if (result.error) {
