@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<!--
+	Epilogue by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+
+<head>
+    <title>Wilson Wedding</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <script>
+        setInterval(function () {
+            var div = document.querySelector("#counter");
+            var count = div.textContent * 1 - 1;
+            div.textContent = count;
+            if (count <= 0) {
+                window.location.replace("./index.html");
+            }
+        }, 1000);
+    </script>
+</head>
+
+<body>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Banner -->
+        <section id="intro" class="main">
+            <span class="icon fa-diamond major"></span>
+            <p>Looks like your donation was cancelled.</p>
+            <p>This page will automatically bring you back to the main page of wilsonwedding.info in
+                <span id="counter">5</span>
+                seconds.
+            </p>
+            <ul class="actions">
+                <li>
+                    <a href="./index.html" class="button">Home</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>

@@ -60,10 +60,68 @@
 					and are looking forward to seeing you in April!</p>
 				<ul class="actions" style="margin-bottom: 0;">
 					<li>
-						<h3>Venmo App</h3>
+						<!-- <h3>Venmo App</h3> -->
 						<a href="https://venmo.com/ellieloveit" class="button">Ellie's Venmo</a>
 					</li>
 					<li>
+						<!-- Load Stripe.js on your website. -->
+						<script src="https://js.stripe.com/v3"></script>
+
+						<!-- Create a button that your customers click to complete their purchase. Customize the styling to suit your branding. -->
+						<!-- a tag with site styling and id for stripe functionality -->
+						<a class="button" id="checkout-button-sku_GWGHwy2We7R4IX">Stripe Donation</a>
+
+						<!-- ORIGINAL BUTTON FROM STRIPE 
+							<button
+							style="background-color:#6772E5;color:#FFF;padding:8px 12px;border:0;border-radius:4px;font-size:1em"
+							id="checkout-button-sku_GWGHwy2We7R4IX" role="link">
+							Checkout
+						</button> -->
+
+						<div id="error-message"></div>
+
+						<script>
+							(function () {
+								var stripe = Stripe('pk_test_t7MXwhZIsRricBqhGizJCXdU00chu7WdQE');
+
+								// regex from https://stackoverflow.com/questions/5735483/regex-to-get-first-word-after-slash-in-url
+								// offical JS way to split url
+								var exp = window.location.href.split(/^(([^:\/?#]+):)?(\/\/([^\/?#]*))?([^?#]*)(\?([^#]*))?(#(.*))?/);
+
+								var url = `${exp[1]}${exp[3]}`;
+
+								console.log('url is: ' + url)
+
+								var checkoutButton = document.getElementById('checkout-button-sku_GWGHwy2We7R4IX');
+								checkoutButton.addEventListener('click', function () {
+									// When the customer clicks on the button, redirect
+									// them to Checkout.
+									stripe.redirectToCheckout({
+										items: [{ sku: 'sku_GWGHwy2We7R4IX', quantity: 1 }],
+
+										// Do not rely on the redirect to the successUrl for fulfilling
+										// purchases, customers may not always reach the success_url after
+										// a successful payment.
+										// Instead use one of the strategies described in
+										// https://stripe.com/docs/payments/checkout/fulfillment
+										successUrl: `${url}/success.html`,
+										cancelUrl: `${url}/canceled.html`,
+										// successUrl: 'https://wilsonwedding.info/success',
+										// cancelUrl: 'https://wilsonwedding.info/canceled',
+									})
+										.then(function (result) {
+											if (result.error) {
+												// If `redirectToCheckout` fails due to a browser or network
+												// error, display the localized error message to your customer.
+												var displayError = document.getElementById('error-message');
+												displayError.textContent = result.error.message;
+											}
+										});
+								});
+							})();
+						</script>
+					</li>
+					<!-- <li>
 						<h3>PayPal</h3>
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
 							<input type="hidden" name="cmd" value="_donations" />
@@ -76,7 +134,7 @@
 							<img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1"
 								height="1" />
 						</form>
-					</li>
+					</li> -->
 				</ul>
 			</article>
 			<article class="item">
@@ -142,6 +200,9 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script src="assets/js/countdown.js"></script>
+	<script>
+		function getHost() { return window.location.host }
+	</script>
 </body>
 
 </html>
