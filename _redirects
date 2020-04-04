@@ -1,2 +1,2 @@
-/success    /success.html
-/canceled   /canceled.html
+/success    /success.html   200
+/canceled   /canceled.html  200
