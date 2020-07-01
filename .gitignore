@@ -1,2 +1,6 @@
 .DS_Store
 generic.html
+node_modules/
+package*.json
+faq.js
+faq.md
